@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning (ML) Module: Intro. Presentation" 
-subtitle: "MSBA"
+subtitle: "Professor & Division Chair MSBA"
 author: "Itauma Itauma"
 institute: "Northwood University"
 date: "`r Sys.Date()`"
@@ -65,11 +65,11 @@ xaringanExtra::use_tile_view()
 
 class: clear, inverse, center, middle
 
-# Front Matter
+# Solving Business Problems using Machine Learning
 
 ---
 
-# Goals for this module
+# Goals for this class
 
 ### Over-arching goal:
 
@@ -109,7 +109,7 @@ This definition leaves a lot of space for a range of approaches to ML
 
 ---
 
-# Supervised & unsupervised
+# Supervised & Unsupervised
 
 ## Supervised ML
 
@@ -173,7 +173,7 @@ This _predictive goal_ means that we can do things differently:
 
 ---
 
-# Supervised & unsupervised
+# Supervised & Unsupervised
 
 ## Unsupervised ML
 
@@ -253,11 +253,11 @@ Do you not yet have codes/outcomes -- and do you want to?
 
 class: clear, inverse, center, middle
 
-# Learning Labs!
+# Course Labs!
 
 ---
 
-# Learning Labs Overviews
+# Labs Overviews
 
 .panelset[
 
@@ -267,14 +267,14 @@ class: clear, inverse, center, middle
 
 We'll work to answer these four questions:
 
-- LL 1: Prediction: How do predictive models differ from other models?
-- LL 2: Interpretation: How do we interpret the accuracy of a prediction model?
-- LL 3: Feature Engineering: How can we make our model better?
-- LL 4: Unsupervised methods: What if we do not have training data?
+- Lab 1: Prediction: How do predictive models differ from other models?
+- Lab 2: Interpretation: How do we interpret the accuracy of a prediction model?
+- Lab 3: Feature Engineering: How can we make our model better?
+- Lab 4: Unsupervised methods: What if we do not have training data?
 
 ]
 
-.panel[.panel-name[LL 1]
+.panel[.panel-name[Lab 1]
 
 **Machine Learning Learning Lab 1: Prediction**
 
@@ -282,7 +282,7 @@ We have some data and want to develop a prediction model. Supervised machine lea
 
 ]
 
-.panel[.panel-name[LL 2]
+.panel[.panel-name[Lab 2]
 
 **Machine Learning Learning Lab 2: Interpretation**
 
@@ -290,7 +290,7 @@ How do we interpret a machine learning model? What else can we say, besides how 
 
 ]
 
-.panel[.panel-name[LL 3]
+.panel[.panel-name[Lab 3]
 
 **Machine Learning Learning Lab 3: Feature Engineering**
 
@@ -298,7 +298,7 @@ How do we interpret a machine learning model? What else can we say, besides how 
 
 ]
 
-.panel[.panel-name[LL 4]
+.panel[.panel-name[Lab 4]
 
 **Machine Learning Learning Lab 4: Unsupervised Methods**
 
