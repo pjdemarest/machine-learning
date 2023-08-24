@@ -75,17 +75,17 @@ class: clear, inverse, center, middle
 
 - **Get started with applying machine learning methods in R** 
 
-### Specific aims are to learn about:
+### What is the primary goal of machine learning?
 
-- A small but important set of ideas --- predictions, interpretation. feature engineering, and supervised and unsupervised methods-- about machine learning
-- How these ideas are instantiated through the *tidymodels* R package
+- Things to learn --- predictive modeling, interpretation. feature engineering, and supervised and unsupervised methods
+- Exploring the use of *tidymodels* R package
 
 ---
 
 # One example of ML . . .
 
 ```{r, echo = FALSE, out.width="30%", fig.align='center'}
-knitr::include_graphics("lab-1/img/gpt-4.png")
+knitr::include_graphics("img/gpt-4.png")
 ```
 
 *Builds upon supervised machine learning models--namely, deep neural networks, the likes of which can be estimated within R; the big advance has to do with the transformer architecture that allows for the fitting of more complex models. It is still important (maybe necessary) to learn about the foundational techniques and methodologies underlying GPT-4.*
@@ -171,6 +171,12 @@ This _predictive goal_ means that we can do things differently:
 - Last, the modeling process can look different:
   - Ensemble models that combine or improve on ("boosting") the predictions of individual models
 
+---
+# Machine Learning Workflow
+
+- Machine learning is a systematic approach to teaching computers to learn from data and make predictions or decisions.  
+- Understanding the machine learning workflow is essential for successful model development.
+- Machine learning workflow involves data collection, preprocessing, feature engineering, model selection, training, evaluation, deployment, and maintenance.
 ---
 
 # Supervised & Unsupervised
