@@ -2,11 +2,12 @@
 
 Machine learning plays a significant role in various aspects of our lives, including its application within the educational domains we engage with. It's undeniable that machine learning's influence in educational research and practice is expanding, albeit with certain uncertainties. The definition of this role is a matter we can collectively shape.
 
-In these labs, you will gain a comprehensive understanding of machine learning and its specific applications in educational settings, particularly within the realm of *STEM education research*. Our journey will encompass three distinct labs as we progress through this course.:
+In these labs, you will gain a comprehensive understanding of machine learning and its specific applications in educational settings, particularly within the realm of *STEM education research*. Our journey will encompass four distinct labs as we progress through this course. You are required to complete three Labs:
 
 -   **Lab 1**: Prediction: How is prediction different from explanation?
 -   **Lab 2**: Interpretation: How do we interpret the accuracy of a machine learning model?
--   **Lab 3**: Unsupervised methods: What if we do not have training data?
+-   **Lab 3**: Feature Engineering: How can we make our model better?
+-   **Lab 4**: Unsupervised methods: What if we do not have training data?
 
 ###### Credits: Materials adapted from [LASER Institute](https://github.com/laser-institute).
 
