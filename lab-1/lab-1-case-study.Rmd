@@ -34,16 +34,15 @@ width="80%"}
 
 Figure 2.2 Steps of Data-Intensive Research Workflow
 
-In the overview presentation for this lab, we considered five
-steps in our supervised machine learning process. Those steps are
-mirrored here in this case study, with the addition of some other
-components of this workflow. For example, to help prepare for analysis,
-we'll first take a step back and think about how we want to use machine
-learning, and *predicting* is a key word. Many scholars have focused on
-predicting students who are *at-risk*: of dropping a course or not
-succeeding in it. In the ML Lab 1 case study will cover the
-following workflow topics as we attempt to develop our own model for
-predicting student drop-out:
+In the overview presentation for this lab, we considered five steps in
+our supervised machine learning process. Those steps are mirrored here
+in this case study, with the addition of some other components of this
+workflow. For example, to help prepare for analysis, we'll first take a
+step back and think about how we want to use machine learning, and
+*predicting* is a key word. Many scholars have focused on predicting
+students who are *at-risk*: of dropping a course or not succeeding in
+it. In the ML Lab 1 case study will cover the following workflow topics
+as we attempt to develop our own model for predicting student drop-out:
 
 1.  **Prepare**: Prior to analysis, we'll look at the context from which
     our data came, formulate a basic research question, and get
@@ -68,8 +67,8 @@ predicting student drop-out:
 ### 1a. Conceptual Focus
 
 Conceptually, we focus on prediction and how it differs from the goals
-of description or explanation. We have two readings in Lab 1
-that accompany this. The first reading introduced below focuses on this
+of description or explanation. We have two readings in Lab 1 that
+accompany this. The first reading introduced below focuses on this
 distinction between prediction and description or explanation. It is one
 of the most widely-read papers in machine learning and articulates how
 machine learning differs from other kinds of statistical models. Breiman
@@ -101,9 +100,9 @@ badge activity); but for now, open up the article and take quick scan of
 the article and note below an observation or question you have about the
 article.
 
--   **Observation:** 
+-   **Observation:**
 
-    **Question:** 
+    **Question:**
 
 #### Reading: Predicting students' final grades
 
@@ -129,19 +128,20 @@ RStudio. Recall that:
 > code that are used in any given project
 
 Since we are working from an R project cloned from
-[GitHub](https://github.com/DrItauma-NU), a Project has already been
-set up for you as indicated by the `.Rproj` file in your main directory
-in the Files pane. Instead, we will focus on getting our project set up
+[GitHub](https://github.com/DrItauma-NU), a Project has already been set
+up for you as indicated by the `.Rproj` file in your main directory in
+the Files pane. Instead, we will focus on getting our project set up
 with the requisite packages we'll need for analysis.
 
 **Packages**, sometimes called libraries, are shareable collections of R
 code that can contain functions, data, and/or documentation and extend
 the functionality of R. You can always check to see which packages have
-already been installed and loaded into RStudio or RStudio Cloud by looking at
-the Files, Plots, & Packages Pane in the lower right-hand corner.
+already been installed and loaded into RStudio or RStudio Cloud by
+looking at the Files, Plots, & Packages Pane in the lower right-hand
+corner.
 
-Two packages we'll use extensively throughout these labs are
-the {tidyverse} and {tidymodels} packages.
+Two packages we'll use extensively throughout these labs are the
+{tidyverse} and {tidymodels} packages.
 
 #### tidyverse 📦
 
@@ -298,7 +298,9 @@ its dimensions --- especially how many rows it has!
 Write down a few observations after inspecting the data:
 
 -   
+
 -   
+
 -   
 
 ### 2b. "Mutate" Variables
@@ -356,7 +358,9 @@ if our new variable has indeed been added to our data frame.
 Write down a few observations after inspecting the data:
 
 -   
+
 -   
+
 -   
 
 **Note**: The [`mutate()`
