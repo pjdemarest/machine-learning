@@ -1,0 +1,183 @@
+---
+title: "Overview Presentation"
+subtitle: "Unsupervised Learning"
+author: "Dr. Mighty Itauma Itauma"
+format: 
+  revealjs:
+    chalkboard: true
+    multiplex: true
+editor: visual
+execute: 
+  echo: true
+---
+
+## **What is Unsupervised Learning?**
+
+Definition
+
+:   Unsupervised learning is a type of machine learning where the algorithm is not given any labels or target variables. Instead, the algorithm is tasked with finding patterns and insights in the data on its own.
+
+## **Key characteristics:**
+
+-   **No labels:** Unsupervised learning algorithms do not receive any labels or target variables with the data.
+
+-   **Pattern discovery:** The goal of unsupervised learning is to find patterns and insights in the data.
+
+-   **Exploratory:** Unsupervised learning is often used for exploratory data analysis, to identify potential hypotheses or questions to investigate.
+
+## **Differentiation from supervised learning:**
+
+-   **Supervised learning:** In supervised learning, the algorithm is given a dataset with labels or target variables. The algorithm is then tasked with learning a relationship between the features and the target variables, so that it can predict the target variables for new data points.
+
+-   **Unsupervised learning:** In unsupervised learning, the algorithm is not given any labels or target variables. Instead, the algorithm is tasked with finding patterns and insights in the data on its own.
+
+## Code-along
+
+Cluster analysis on the famous Iris dataset.
+
+```{r}
+#| include: true
+#| output: false
+# Load the iris dataset
+iris_data <- iris
+
+# Perform K-Means clustering on the iris dataset
+kmeans_results <- stats::kmeans(iris_data[, 1:4], 3)
+
+# Print the cluster assignments
+kmeans_results$cluster
+```
+
+This code will perform K-Means clustering on the iris dataset, which is a dataset of flower measurements. The K-Means algorithm will group the data points into 3 clusters based on their features. The cluster assignments are then printed to the console.
+
+## Visualize the KMeans Cluster Assignments
+
+Using **ggplot2**
+
+```{r}
+#| label: load-packages
+#| message: false
+#| include: false
+library(ggplot2)
+library(dplyr)
+library(dbscan)
+library(ggforce)
+```
+
+```{r}
+#| output-location: slide
+
+
+# Create a ggplot2 object
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = kmeans_results$cluster)) +
+
+# Add geom_point() to plot the data points
+geom_point() +
+
+# Add a title and axis labels
+labs(title = "KMeans Clustering of Iris Dataset", x = "Sepal Length", y = "Sepal Width")
+```
+
+This code will create a scatter plot of the iris data, with the data points colored according to their cluster assignment. The title and axis labels are also added to the plot.
+
+## **Unsupervised Learning Algorithms**
+
+-   **Clustering:** Clustering algorithms group similar data points together. Some popular clustering algorithms in R include K-Means, hierarchical clustering, and DBSCAN.
+
+-   **Dimensionality reduction:** Dimensionality reduction algorithms reduce the number of features in a dataset while preserving as much of the information as possible. Some popular dimensionality reduction algorithms in R include Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE).
+
+## Principal Component Analysis
+
+PCA is based on independent variables. Any dependent variable must be removed.
+
+```{r}
+#| output-location: slide
+
+
+# Perform PCA on the iris dataset
+pca_results <- stats::prcomp(iris[, 1:4], center = TRUE, scale. = TRUE)
+
+# Print the first two principal components
+head(pca_results$x[, 1:2], 20)
+```
+
+This code will perform PCA on the iris dataset, which is a dimensionality reduction technique. PCA will identify the two most important principal components, which are linear combinations of the original features. Explore the summary of `pca_results`.
+
+## Cluster Analysis
+
+Concept of clustering
+
+:   Clustering is a type of unsupervised learning where the goal is o group similar data points together. Clustering can be used for a variety of tasks, such as segmenting customers, identifying fraud, and recommending products.
+
+## Applications of clustering:
+
+-   **Customer segmentation:** Clustering can be used to segment customers into different groups based on their demographics, purchase history, or other factors. This information can then be used to target customers with more relevant marketing messages and offers.
+
+-   **Fraud detection:** Clustering can be used to identify fraudulent transactions by identifying groups of transactions that are unusual or suspicious.
+
+-   **Product recommendation:** Clustering can be used to recommend products to customers based on their purchase history or the purchase history of other similar customers.
+
+## DBSCAN Algorithm Explained
+
+```{youtube}
+https://www.youtube.com/watch?v=RDZUdRSDOok
+```
+
+## Example code in R:
+
+[Mall Customer Segmentation Data](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python): You own the mall and want to understand the customers like who can be easily converge \[Target Customers\] so that the sense can be given to marketing team and plan the strategy accordingly.
+
+```{r}
+#| output-location: slide
+# Load the customer data
+customer_data <- read.csv("data/Mall_Customers.csv")
+
+# Convert the variable Gender to factor
+customer_data <- customer_data %>%
+  mutate(Gender = as.factor(Gender))
+customer_data$Gender <- recode(customer_data$Gender, "Female" = 0, "Male" = 1)
+
+# Perform DBSCAN clustering on the customer_data data frame, specifying a value for the eps argument
+dbscan_results <- dbscan(customer_data[, -1], eps = 0.5)
+
+# Print the cluster assignments
+dbscan_results$cluster
+```
+
+This code will perform DBSCAN clustering on the `customer_data` data frame. The cluster assignments are then printed to the console.
+
+The advantage of DBSCAN is that it can handle missing values.
+
+## Visualization of Cluster Assignments
+
+```{r}
+#| output-location: slide
+
+
+# Define the variable eps
+eps <- 0.5
+
+# Create a ggplot2 object
+ggplot(customer_data[, -1], aes(x = customer_data$Age, y = customer_data$Gender, color = dbscan_results$cluster)) +
+
+# Add geom_point() to plot the data points
+geom_point() +
+
+# Add geom_circle() to draw circles around each data point with radius equal to eps
+geom_circle(aes(x0 = customer_data$Age, y0 = customer_data$Gender, r = eps), alpha = 0.5) +
+
+# Add a title and axis labels
+labs(title = "DBSCAN Clustering of Customer Data", x = "Age", y = "Gender")
+```
+
+## Dimensionality Reduction
+
+**Importance of dimensionality reduction in unsupervised learning**
+
+:   Dimensionality reduction is important in unsupervised learning because it can help to improve the performance of unsupervised learning algorithms. Dimensionality reduction can also make it easier to visualize and interpret the data.
+
+## **Applications of dimensionality reduction**
+
+**Improved performance of unsupervised learning algorithms**
+
+:   Dimensionality reduction can help to improve the performance of unsupervised learning algorithms by reducing the noise

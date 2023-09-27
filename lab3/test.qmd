@@ -1,0 +1,121 @@
+---
+title: "Awesome"
+author: "Dr. Mighty Itauma Itauma"
+format: revealjs
+editor: visual
+---
+
+## Awesome
+
+A **man** of words and not of deeds is like a *garden* full of weeds. H~2~O
+
+~~N~~100
+
+`verbatim code`
+
+`2+2`
+
+### Amazing
+
+Great way of learning. Posit makes learning fun!
+
+<https://quarto.org>
+
+[Quarto](https://quarto.org)
+
+\![Quarto](https://quarto.org)
+
+\![Elephant](https://png.pngtree.com/png-clipart/20230411/original/pngtree-elephant-asian-elephant-png-image_9043910.png)
+
+\![Elephant](https://png.pngtree.com/png-clipart/20230411/original/pngtree-elephant-asian-elephant-png-image_9043910.png)
+
+\![Elephant](elephant.png)
+
+## Lists
+
+-   Awesome
+
+    -   Cool
+
+        -   Yeah!
+
+1.  Great
+2.  Cool!
+3.  Fantastics
+    1.  Nice
+    2.  Wow!
+        1.  Nice
+
+term
+
+:   Definition of terms
+
+term
+
+:   New definition
+
+## Source code
+
+``` python
+1+1
+```
+
+``` r
+2+2
+```
+
+```{r}
+3+3
+```
+
+$$
+E = mc^2
+$$
+
+\`\`\`(mermaid)
+
+flowchart LR
+
+A\[Hard edge\] \--\> B(Round edge)
+
+B ---\> C(Decision)
+
+C ---\> D\[Result one\]
+
+C \--\> E\[Result two\]
+
+\`\`\`
+
+## Awesome
+
+``` mermaid
+flowchart LR
+
+A[Hard edge] --> B(Round edge)
+
+B –->  C(Decision)
+
+C –-> D[Result one]
+
+C --> E[Result two]
+```
+
+::: panel-tabset
+## Clustering Analysis
+
+sdsdsds
+
+## Applications of clustering:
+
+sdsdsd
+
+## Example code in R:
+
+```{r}
+2+2
+```
+:::
+
+Case Study 1
+
+Garshakurthi, Saikuma
