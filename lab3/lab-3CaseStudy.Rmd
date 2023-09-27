@@ -63,7 +63,7 @@ We can then use this data frame to perform unsupervised learning to identify gro
 
 - Simulate the data.  
 - Perform dimensionality reduction on the data using PCA.  
-- Cluster the data using KMeans.  
+- Cluster the data using KMeans and other clustering algorithms.  
 - Interpret the results of your analysis.  
 
 ## Submission
