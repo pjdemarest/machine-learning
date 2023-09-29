@@ -11,6 +11,36 @@ execute:
   echo: true
 ---
 
+## Learning Objectives
+
+-   Better understand how clustering algorithms work in business.
+
+-   Run and interpret a K-means clustering model.
+
+-   Run and interpret a Density-based spatial clustering of applications with noise (DBSCAN) clustering model.
+
+-   Dimensionality reduction.
+
+We will discuss the basics of clustering algorithms. You will run and evaluate a k-means clustering model and a DBSCAN clustering model using realistic business data. You will also examine dimensionality reduction.
+
+## Guiding Questions
+
+-   What is the purpose of clustering algorithms in business?
+
+-   What business questions can clustering algorithms help answer?
+
+-   How do k-means algorithms work?
+
+-   How do DBSCAN algorithms work?
+
+-   How do I run and interpret a k-means model?
+
+-   How do I run and interpret a DBSCAN model?
+
+-   What is the purpose of dimensionality reduction?
+
+-   What is semi-supervised learning?
+
 ## **What is Unsupervised Learning?**
 
 Definition
@@ -31,6 +61,12 @@ Definition
 
 -   **Unsupervised learning:** In unsupervised learning, the algorithm is not given any labels or target variables. Instead, the algorithm is tasked with finding patterns and insights in the data on its own.
 
+## **Unsupervised Learning Algorithms**
+
+-   **Clustering:** Clustering algorithms group similar data points together. Some popular clustering algorithms in R include K-Means, hierarchical clustering, and DBSCAN.
+
+-   **Dimensionality reduction:** Dimensionality reduction algorithms reduce the number of features in a dataset while preserving as much of the information as possible. Some popular dimensionality reduction algorithms in R include Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE).
+
 ## Code-along
 
 Cluster analysis on the famous Iris dataset.
@@ -38,17 +74,31 @@ Cluster analysis on the famous Iris dataset.
 ```{r}
 #| include: true
 #| output: false
+
+set.seed(27923)
+
 # Load the iris dataset
 iris_data <- iris
 
-# Perform K-Means clustering on the iris dataset
-kmeans_results <- stats::kmeans(iris_data[, 1:4], 3)
+# Perform K-Means clustering on the iris dataset with 3 centers, run 15 times
+kmeans_results <- stats::kmeans(iris_data[, 1:4], centers = 3, nstart = 20)
 
 # Print the cluster assignments
 kmeans_results$cluster
+
+# Print the kemans_results object
+kmeans_results
 ```
 
 This code will perform K-Means clustering on the iris dataset, which is a dataset of flower measurements. The K-Means algorithm will group the data points into 3 clusters based on their features. The cluster assignments are then printed to the console.
+
+## KMeans with two features
+
+```{r}
+
+iris.out <- kmeans(iris_data[, c("Sepal.Length", "Petal.Length")], centers = 3, nstart = 15)
+plot(iris_data$Sepal.Length, iris_data$Petal.Length, col=iris.out$cluster, main="k-means with 3 clusters",xlab="",ylab="")
+```
 
 ## Visualize the KMeans Cluster Assignments
 
@@ -80,15 +130,266 @@ labs(title = "KMeans Clustering of Iris Dataset", x = "Sepal Length", y = "Sepal
 
 This code will create a scatter plot of the iris data, with the data points colored according to their cluster assignment. The title and axis labels are also added to the plot.
 
-## **Unsupervised Learning Algorithms**
+## Determining the Best Number of Clusters
 
--   **Clustering:** Clustering algorithms group similar data points together. Some popular clustering algorithms in R include K-Means, hierarchical clustering, and DBSCAN.
+How do you determine the best number of clusters?
 
--   **Dimensionality reduction:** Dimensionality reduction algorithms reduce the number of features in a dataset while preserving as much of the information as possible. Some popular dimensionality reduction algorithms in R include Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE).
+Create a Scree plot (Total Within SS vs Number of Clusters)
+
+The measure of model quality is the total within cluster sum of squares error. Look for the model(s) with the lowest error to find models with the better model results.
+
+if you do not know the number of clusters and need to determine it, you will need to run the algorithm multiple times, each time with a different number of clusters. From this, you can observe how a measure of model quality changes with the number of clusters.
+
+We run `kmeans()` multiple times to see how model quality changes as the number of clusters changes. Plots displaying this information help to determine the number of clusters and are often referred to as *scree plots*.
+
+The ideal plot will have an *elbow* where the quality measure improves more slowly as the number of clusters increases. This indicates that the quality of the model is no longer improving substantially as the model complexity (i.e., number of clusters) increases. In other words, the elbow indicates the number of clusters inherent in the data.
+
+The square root of n/2
+
+Trial and Error is normal
+
+A high k can lead to overfitting.
+
+## Selecting Number of Clusters
+
+```{r}
+# Initialize total within sum of squares error: wss
+wss <- 0
+iris_data2 <- iris_data[, c("Sepal.Length", "Petal.Length")]
+# For 1 to 15 cluster centers
+for (i in 1:15) {
+  km.out <- kmeans(iris_data2, centers = i, nstart = 20)
+  # Save total within sum of squares to wss variable
+  wss[i] <- km.out$tot.withinss
+}
+
+# Plot total within sum of squares vs. number of clusters
+plot(1:15, wss, type = "b", 
+     xlab = "Number of Clusters", 
+     ylab = "Within groups sum of squares")
+
+# Set k equal to the number of clusters corresponding to the elbow location
+#k <- ___
+```
+
+## Data Challenge
+
+```{r}
+# Initialize total within sum of squares error: wss
+wss <- 0
+
+# Look over 1 to 15 possible clusters
+for (i in 1:15) {
+  # Fit the model: km.out
+  iris.out <- kmeans(iris_data[, 1:4], centers = i, nstart = 20, iter.max = 50)
+  # Save the within cluster sum of squares
+  wss[i] <- iris.out$tot.withinss
+}
+
+# Produce a scree plot
+plot(1:15, wss, type = "b", 
+     xlab = "Number of Clusters", 
+     ylab = "Within groups sum of squares")
+
+
+```
+
+## Data Challenge
+
+```{r}
+# Select number of clusters
+k <- 2
+
+# Build model with k clusters: km.out
+iris.out <- kmeans(iris_data[, 1:4], centers = k, nstart = 20, iter.max = 50)
+
+# View the resulting model
+iris.out
+
+# Plot of Sepal length vs. Petal length by cluster membership
+plot(iris_data[, c("Sepal.Length", "Petal.Length")],
+     col = iris.out$cluster,
+     main = paste("k-means clustering of Iris with", k, "clusters"),
+     xlab = "Sepal length", ylab = "Petal length")
+```
+
+## **Business Scenario:**
+
+A graduate school is interested in improving student engagement, academic success, and assessments. The school has data on students from various countries, including their demographics, academic performance, engagement data, and cohort information. The school wants to use this data to identify patterns and trends that can help them develop targeted interventions to improve student outcomes.
+
+## **Fictional Dataset:**
+
+The following R function can be used to create a fictional dataset of 150 students from 5 cohorts, with over 10 features that address the problems of student engagement, academic success, assessments, and cohort information, with the following features randomly generated:
+
+```{r}
+# Function to generate a fictional dataset of students in a graduate school
+generate_student_data <- function(n_students = 150) {
+  set.seed(28923)
+  # Create a data frame with the relevant features
+  student_data <- data.frame(
+    country = sample(c("United States", "China", "India", "Canada", "Nigeria"), n_students, replace = TRUE),
+    age = sample(21:35, n_students, replace = TRUE),
+    gender = sample(c("Male", "Female"), n_students, replace = TRUE),
+    gpa = rnorm(n_students, mean = 3.5, sd = 0.5),
+    standardized_test_scores = rnorm(n_students, mean = 1100, sd = 100),
+    number_of_hours_spent_studying_per_week = rnorm(n_students, mean = 25, sd = 5),
+    number_of_hours_spent_participating_in_extracurricular_activities_per_week = rnorm(n_students, mean = 10, sd = 5),
+    cohort = sample(1:5, n_students, replace = TRUE)
+  )
+
+  # Return the data frame
+  return(student_data)
+}
+```
+
+## Generate Student Data
+
+To use the `generate_student_data()` function, simply pass the desired number of students as an argument to the function. For example, the following code will generate a fictional dataset of 150 students:
+
+```{r}
+student_data <- generate_student_data(n_students = 150)
+```
+
+The `student_data` data frame will now contain 150 students, with the following features:
+
+-   **country:** The student's country of origin.
+
+-   **age:** The student's age in years.
+
+-   **gender:** The student's gender.
+
+-   **gpa:** The student's grade point average.
+
+-   **standardized_test_scores:** The student's standardized test scores.
+
+-   **number_of_hours_spent_studying_per_week:** The number of hours the student spends studying per week.
+
+-   **number_of_hours_spent_participating_in_extracurricular_activities_per_week:** The number of hours the student spends participating in extracurricular activities per week.
+
+-   **cohort:** The student's cohort.
+
+You can use the `student_data` data frame to conduct unsupervised learning to discover patterns and trends. For example, you could use k-means clustering to identify groups of students with similar characteristics, such as students from the same country, students with similar GPAs, students with similar engagement levels, or students in the same cohort. Once you have identified these groups, you can investigate the differences between the groups to identify potential factors that are contributing to student engagement, academic success, and assessments.
+
+This information could then be used to develop targeted interventions to improve student outcomes. For example, the school could provide additional support to students who are struggling academically, or encourage students to participate in extracurricular activities that have been shown to be beneficial for student success.
+
+## Explore the data
+
+```{r}
+str(student_data)
+
+# random sample of 10 different rows
+slice_sample(student_data, n = 10)
+```
+
+## Z-score Standardization
+
+```{r}
+# Select the numeric variables from student_data
+student_data_numeric <- student_data %>%
+  select_if(is.numeric)
+
+# Scale all numeric variables in student_data_numeric
+student_data_numeric_scaled <- data.frame(scale(student_data_numeric))
+
+# Print the scaled data frame
+head(student_data_numeric_scaled)
+```
+
+## Creating K-Means Clusters
+
+```{r}
+# Run the model
+set.seed(28923)
+student_clusters <- kmeans(student_data_numeric_scaled[,2:5], centers=7, iter.max=20, nstart=1)
+```
+
+## Evaluating K-Means
+
+```{r}
+# Size of the k clusters
+student_clusters$size
+```
+
+```{r}
+# A matrix indicating the mean values for each feature and cluster combination
+student_clusters$centers
+```
+
+```{r}
+# Add cluster to the original a more complete dataframe and add labels
+# head(student_data_numeric)
+student_data$cluster <- student_clusters$cluster
+student_data <- student_data %>% mutate(cluster_labels = case_when(
+  cluster==1 ~ 'lowest test scores', 
+  cluster==2 ~ 'studying less',
+  cluster==3 ~ 'high test score',
+  cluster==4 ~ 'high gpa and study more',
+  cluster==5 ~ 'activities',
+  cluster==6 ~ 'moderate',
+  cluster==7 ~ 'lowest gpa'))
+
+student_data[20:25, ]
+```
+
+```{r}
+library(factoextra)
+# Visualizing the cluster
+fviz_cluster(student_clusters, student_data_numeric_scaled[,2:5],  geom = "point", show.clust.cent = FALSE, palette = "jco", ggtheme = theme_classic())
+```
+
+## Density-Based Clustering
+
+What are the advantage of density-based clustering over K-Means clustering?
+
+```{r}
+dbscan::kNNdistplot(student_data_numeric_scaled[,2:5], k = 7)
+abline(h = 2.1)
+```
+
+```{r}
+# Run the DBSCAN model
+set.seed(28923)
+clusters_db <- dbscan(student_data_numeric_scaled[,2:5], eps = 2.1, minPts = 7)
+```
+
+```{r}
+# count clusters
+table(clusters_db$cluster)
+```
+
+```{r}
+# visualize the clusters
+fviz_cluster(clusters_db, student_data_numeric_scaled[,2:5],  geom = "point", show.clust.cent = FALSE, palette = "jco", ggtheme = theme_classic())
+```
+
+```{r}
+# Examine clusters
+student_data_numeric_scaled$cluster <- clusters_db$cluster
+clustering_look <- student_data_numeric_scaled %>% group_by(cluster) %>% summarize(n=n(), across('gpa':'number_of_hours_spent_participating_in_extracurricular_activities_per_week', mean))
+clustering_look
+```
 
 ## Principal Component Analysis
 
 PCA is based on independent variables. Any dependent variable must be removed.
+
+```{r}
+# Example data frame 
+data <- data.frame(
+  Var1 = c(1, 2, 3, 4, 5),
+  Var2 = c(5, 4, 3, 2, 1),
+  Var3 = c(2, 4, 6, 8, 10)
+)
+
+# Specify the number of principal components (e.g., 2)
+num_components <- 2
+
+# Perform PCA and specify the number of components
+pca_result <- prcomp(data, center = TRUE, scale = TRUE, retx = TRUE, rank. = num_components)
+
+# Extract the transformed data with the specified number of components
+reduced_data <- pca_result$x
+```
 
 ```{r}
 #| output-location: slide
