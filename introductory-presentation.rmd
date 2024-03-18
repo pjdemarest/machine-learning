@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning (ML): Intro. Presentation" 
-subtitle: "Professor & Division Chair MSBA"
-author: "Dr. Mighty Itauma Itauma"
+subtitle: "Adjunct Professor"
+author: "Dr. Folami Alamudun"
 institute: "Northwood University"
 date: "`r Sys.Date()`"
 output:
@@ -318,7 +318,7 @@ The previous three learning labs involved the use of data with known outcome var
 
 ML is fun! Happy learning!
 
-- *Dr. Mighty Itauma Itauma* (itaumai@northwood.edu; https://github.com/amightyo). 
+- *Dr. Folami Alamudun* (alamudun@northwood.edu; https://github.com/folagit). 
 
 
 [General troubleshooting tips for R and RStudio](https://livenorthwood-my.sharepoint.com/:w:/g/personal/itaumai_northwood_edu/EZWNAgShFaBPtU5dtkTbWqsBtw-xM92LyySuzZMut1Wayw?e=1FYfiX)
