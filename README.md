@@ -33,6 +33,6 @@ The previous three learning labs involved the use of data with known outcome var
 
 ###### Credits: Materials adapted from [LASER Institute](https://github.com/laser-institute).
 
-[Dr. Mighty Itauma](https://linkedin.com/in/amightyo)  
-Professor & Division Chair  
+[Dr. Folami Alamudunm](https://linkedin.com/in/fola-alamudun)  
+Adjunct Professor  
 ![Northwood-270x110](https://github.com/DrItauma-NU/machine-learning/assets/609418/d7d1ec53-8969-4da7-950e-fc379172b802)
