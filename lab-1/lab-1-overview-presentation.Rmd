@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning Learning Lab 1 Overview: Prediction"
 subtitle: "Overview Presentation"
-author: "**Dr. Mighty Itauma Itauma**"
+author: "**Dr. Folami Alamudun**"
 institute: "LASER Institute"
 date: '`r format(Sys.time(), "%B %d, %Y")`'
 output:
@@ -404,8 +404,8 @@ Estrellado, R. A., Freer, E. A., Mostipak, J., Rosenberg, J. M., & Velásquez, I
 
 Have fun with the Case Study and Lab 1 (badge)!
 
-- *Dr. Mighty Itauma Itauma* 
+- *Dr. Folami Alamudun* 
 
-[These slides (Introductory Presentation)](https://dritauma-nu.github.io/machine-learning/introductory-presentation.html#1)
+[These slides (Introductory Presentation)](https://folagit.github.io/machine-learning/introductory-presentation.html#1)
 
 [General troubleshooting tips for R and RStudio](https://livenorthwood-my.sharepoint.com/:w:/g/personal/itaumai_northwood_edu/EZWNAgShFaBPtU5dtkTbWqsBtw-xM92LyySuzZMut1Wayw?e=1FYfiX)
