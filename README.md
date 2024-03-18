@@ -4,7 +4,7 @@ Machine learning plays a significant role in various aspects of our lives, inclu
 
 In these labs, you will gain a comprehensive understanding of machine learning and its specific applications in educational settings, particularly within the realm of *STEM education research*. Our journey will encompass four distinct labs as we progress through this course. You are required to complete three Labs:
 
--   **Lab 1**: Prediction: How is prediction different from explanation?
+-   **Lab 1**: (Prediction: How is prediction different from explanation?)[https://folagit.github.io/machine-learning/lab-1/lab-1-overview-presentation.html]
 -   **Lab 2**: Interpretation: How do we interpret the accuracy of a machine learning model?
 -   **Lab 3**: Feature Engineering: How can we make our model better?
 -   **Lab 4**: Unsupervised methods: What if we do not have training data?
