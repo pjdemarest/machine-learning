@@ -9,7 +9,7 @@ In these labs, you will gain a comprehensive understanding of machine learning a
 -   **Lab 3**: Feature Engineering: How can we make our model better?
 -   **Lab 4**: Unsupervised methods: What if we do not have training data?
 
-*[Introductory Presentation](https://folagit.github.io/machine-learning/introductory-presentation.html#1)* 
+*[Introductory Presentation](https://folagit.github.io/machine-learning/introductory-presentation.html)* 
 
 **Machine Learning Learning Lab 1: Prediction**
 
