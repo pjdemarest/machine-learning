@@ -378,7 +378,7 @@ Estrellado, R. A., Freer, E. A., Mostipak, J., Rosenberg, J. M., & Velásquez, I
 
 - Building a prediction model for students passing the class---based just on student data.
 - Work with peers to complete this, reading the text, following links to resources (and the reading), and then completing the required 👉 Your Turn ⤵ tasks
-- A key is available, but you are strongly encourage you to ask for it only at the end to check your work, or if you are completely stuck and have tried our recommended [troubleshooting steps](https://livenorthwood-my.sharepoint.com/:w:/g/personal/itaumai_northwood_edu/EZWNAgShFaBPtU5dtkTbWqsBtw-xM92LyySuzZMut1Wayw?e=1FYfiX).
+- A key is available, but you are strongly encourage you to ask for it only at the end to check your work, or if you are completely stuck and have tried our recommended [troubleshooting steps](https://my.northwood.edu/bbcswebdav/xid-22288836_1).
 
 ]
 
@@ -393,7 +393,7 @@ Estrellado, R. A., Freer, E. A., Mostipak, J., Rosenberg, J. M., & Velásquez, I
 
 # Troubleshooting and setup
 
-- Please view [this document](https://livenorthwood-my.sharepoint.com/:w:/g/personal/itaumai_northwood_edu/EZWNAgShFaBPtU5dtkTbWqsBtw-xM92LyySuzZMut1Wayw?e=1FYfiX)
+- Please view [this document](https://my.northwood.edu/bbcswebdav/xid-22288836_1)
 - Change default settings: Tools -> Global Settings -> Workspace -> DO NOT restore workspace 
 - Change default settings: Tools -> Global Settings -> Workspace -> Save workspace to .RData NEVER
 - Session -> Restart R and Clear Output is a good place to start
@@ -406,6 +406,6 @@ Have fun with the Case Study and Lab 1 (badge)!
 
 - *Dr. Folami Alamudun* 
 
-[These slides (Introductory Presentation)](https://folagit.github.io/machine-learning/introductory-presentation.html#1)
+[These slides (Introductory Presentation)](https://folagit.github.io/machine-learning/lab-1/lab-1-overview-presentation.html)
 
-[General troubleshooting tips for R and RStudio](https://livenorthwood-my.sharepoint.com/:w:/g/personal/itaumai_northwood_edu/EZWNAgShFaBPtU5dtkTbWqsBtw-xM92LyySuzZMut1Wayw?e=1FYfiX)
+[General troubleshooting tips for R and RStudio](https://my.northwood.edu/bbcswebdav/xid-22288836_1)

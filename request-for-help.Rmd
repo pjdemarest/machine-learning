@@ -10,4 +10,4 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Check out this document! 
 
-Microsoft Doc: [Request for help with machine learning issue](https://livenorthwood-my.sharepoint.com/:w:/g/personal/itaumai_northwood_edu/EZWNAgShFaBPtU5dtkTbWqsBtw-xM92LyySuzZMut1Wayw?e=1FYfiX) 
+Microsoft Doc: [Request for help with machine learning issue](https://my.northwood.edu/bbcswebdav/xid-22288836_1) 
