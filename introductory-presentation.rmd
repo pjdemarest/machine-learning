@@ -321,4 +321,4 @@ ML is fun! Happy learning!
 - *Dr. Folami Alamudun* (alamudun@northwood.edu; https://github.com/folagit). 
 
 
-[General troubleshooting tips for R and RStudio](https://livenorthwood-my.sharepoint.com/:w:/g/personal/itaumai_northwood_edu/EZWNAgShFaBPtU5dtkTbWqsBtw-xM92LyySuzZMut1Wayw?e=1FYfiX)
+[General troubleshooting tips for R and RStudio](https://my.northwood.edu/bbcswebdav/xid-22288836_1)
