@@ -35,4 +35,4 @@ The previous three learning labs involved the use of data with known outcome var
 
 [Dr. Folami Alamudun](https://linkedin.com/in/fola-alamudun)  
 Adjunct Professor  
-![Northwood-270x110](https://github.com/folagit/machine-learning/assets/609418/d7d1ec53-8969-4da7-950e-fc379172b802)
+![Northwood-270x110](https://github.com/folagit/machine-learning/blob/main/img/Northwood-270x110.jpg)
