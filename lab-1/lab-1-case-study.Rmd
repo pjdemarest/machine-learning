@@ -100,9 +100,9 @@ badge activity); but for now, open up the article and take quick scan of
 the article and note below an observation or question you have about the
 article.
 
--   **Observation:**
+- After a brief scanning of this article, I believe it will cover the differences and similarities between data modeling culture and algorithmic modeling culture.
 
-    **Question:**
+- One question that I would have would be what will the examples look like other than the one provided in section 5.1. 
 
 #### Reading: Predicting students' final grades
 
@@ -189,7 +189,7 @@ lightweight but highly useful {janitor} package to help with some data
 cleaning tasks. Use the code chunk below to load these two packages:
 
 ```{r load-tidymodels}
-
+library()
 
 
 ```
